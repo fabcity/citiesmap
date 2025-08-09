@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Barcelona",
+        "lat": 41.383,
+        "lng": 2.183,
+        "url": "https://fab.city/labs/fab-lab-barcelona/"
+    },
+    {
+        "name": "Paris",
+        "lat": 48.85667,
+        "lng": 2.35222,
+        "url": "https://fab.city/labs/fab-city-grand-paris/"
+    },
+    {
+        "name": "Boston",
+        "lat": 42.3736,
+        "lng": -71.0598,
+        "url": "https://fab.city/labs/fab-lab-boston/"
+    }
+]
