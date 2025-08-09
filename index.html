@@ -9,6 +9,328 @@
 </head>
 <body>
     <div id="map"></div>
+    <script>
+        const CITIES_DATA = [
+    {
+        "name": "Barcelona",
+        "lat": 41.383,
+        "lng": 2.183,
+        "url": "https://fab.city/labs/fab-lab-barcelona/"
+    },
+    {
+        "name": "Paris",
+        "lat": 48.85667,
+        "lng": 2.35222,
+        "url": "https://fab.city/labs/fab-city-grand-paris/"
+    },
+    {
+        "name": "Boston",
+        "lat": 42.3736,
+        "lng": -71.0598,
+        "url": "https://fab.city/labs/fab-lab-boston/"
+    },
+    {
+        "name": "Amsterdam",
+        "lat": 52.3730796,
+        "lng": 4.8924534,
+        "url": ""
+    },
+    {
+        "name": "Augsburg",
+        "lat": 48.3690341,
+        "lng": 10.8979522,
+        "url": ""
+    },
+    {
+        "name": "Auvergne-Rh\u00f4ne-Alpes",
+        "lat": 45.2968119,
+        "lng": 4.6604809,
+        "url": ""
+    },
+    {
+        "name": "Bali",
+        "lat": -8.2271303,
+        "lng": 115.1919203,
+        "url": ""
+    },
+    {
+        "name": "Bas-Saint-Laurent",
+        "lat": 48.1240048,
+        "lng": -68.5460758,
+        "url": ""
+    },
+    {
+        "name": "Belo Horizonte",
+        "lat": -19.9227318,
+        "lng": -43.9450948,
+        "url": ""
+    },
+    {
+        "name": "Bhutan",
+        "lat": 27.549511,
+        "lng": 90.5119273,
+        "url": ""
+    },
+    {
+        "name": "Brest",
+        "lat": 48.3905283,
+        "lng": -4.4860088,
+        "url": ""
+    },
+    {
+        "name": "Cambridge",
+        "lat": 42.3656347,
+        "lng": -71.1040018,
+        "url": ""
+    },
+    {
+        "name": "C\u00f3rdoba",
+        "lat": -31.4166867,
+        "lng": -64.1834193,
+        "url": ""
+    },
+    {
+        "name": "Curitiba",
+        "lat": -25.4295963,
+        "lng": -49.2712724,
+        "url": ""
+    },
+    {
+        "name": "Detroit",
+        "lat": 42.3315509,
+        "lng": -83.0466403,
+        "url": ""
+    },
+    {
+        "name": "Ekurhuleni",
+        "lat": -26.184765,
+        "lng": 28.3210725,
+        "url": ""
+    },
+    {
+        "name": "Georgia",
+        "lat": 41.6808672,
+        "lng": 44.0287806,
+        "url": ""
+    },
+    {
+        "name": "Guanajuato",
+        "lat": 20.9876996,
+        "lng": -101.0,
+        "url": ""
+    },
+    {
+        "name": "Hamburg",
+        "lat": 53.550341,
+        "lng": 10.000654,
+        "url": ""
+    },
+    {
+        "name": "Kamakura",
+        "lat": 35.3192808,
+        "lng": 139.5469627,
+        "url": ""
+    },
+    {
+        "name": "Kerala",
+        "lat": 10.3528744,
+        "lng": 76.5120396,
+        "url": ""
+    },
+    {
+        "name": "Linz",
+        "lat": 48.3059078,
+        "lng": 14.286198,
+        "url": ""
+    },
+    {
+        "name": "Ljubljana",
+        "lat": 46.0500268,
+        "lng": 14.5069289,
+        "url": ""
+    },
+    {
+        "name": "Mexico City",
+        "lat": 19.3207722,
+        "lng": -99.1514678,
+        "url": ""
+    },
+    {
+        "name": "Montpellier",
+        "lat": 43.6112422,
+        "lng": 3.8767337,
+        "url": ""
+    },
+    {
+        "name": "Montreal",
+        "lat": 45.5031824,
+        "lng": -73.5698065,
+        "url": ""
+    },
+    {
+        "name": "Oakland",
+        "lat": 37.8044557,
+        "lng": -122.271356,
+        "url": ""
+    },
+    {
+        "name": "Occitanie",
+        "lat": 43.6487851,
+        "lng": 2.3435684,
+        "url": ""
+    },
+    {
+        "name": "Oulu",
+        "lat": 65.0117869,
+        "lng": 25.4701983,
+        "url": ""
+    },
+    {
+        "name": "Papua",
+        "lat": -2.4749149,
+        "lng": 138.08485,
+        "url": ""
+    },
+    {
+        "name": "Parepare",
+        "lat": -4.0202504,
+        "lng": 119.6611703,
+        "url": ""
+    },
+    {
+        "name": "Plymouth",
+        "lat": 50.3714122,
+        "lng": -4.1424451,
+        "url": ""
+    },
+    {
+        "name": "Puebla",
+        "lat": 18.833333,
+        "lng": -98.0,
+        "url": ""
+    },
+    {
+        "name": "Recife",
+        "lat": -8.0584933,
+        "lng": -34.8848193,
+        "url": ""
+    },
+    {
+        "name": "Renca",
+        "lat": -33.4035217,
+        "lng": -70.7309274,
+        "url": ""
+    },
+    {
+        "name": "Rennes",
+        "lat": 48.1113387,
+        "lng": -1.6800198,
+        "url": ""
+    },
+    {
+        "name": "Sacramento",
+        "lat": 38.5810606,
+        "lng": -121.493895,
+        "url": ""
+    },
+    {
+        "name": "Santiago de Chile",
+        "lat": -33.4377756,
+        "lng": -70.6504502,
+        "url": ""
+    },
+    {
+        "name": "Sao Paulo",
+        "lat": -23.5506507,
+        "lng": -46.6333824,
+        "url": ""
+    },
+    {
+        "name": "Seoul",
+        "lat": 37.5666791,
+        "lng": 126.9782914,
+        "url": ""
+    },
+    {
+        "name": "Shenzhen",
+        "lat": 22.5445741,
+        "lng": 114.0545429,
+        "url": ""
+    },
+    {
+        "name": "Somerville",
+        "lat": 42.3875968,
+        "lng": -71.0994968,
+        "url": ""
+    },
+    {
+        "name": "Sorocaba",
+        "lat": -23.5003451,
+        "lng": -47.4582864,
+        "url": ""
+    },
+    {
+        "name": "S\u00fcdburgenland",
+        "lat": 47.1437231,
+        "lng": 16.2849945,
+        "url": ""
+    },
+    {
+        "name": "Sumedang",
+        "lat": -6.8098713,
+        "lng": 107.9817732,
+        "url": ""
+    },
+    {
+        "name": "Tanga",
+        "lat": -5.202134,
+        "lng": 38.2275548,
+        "url": ""
+    },
+    {
+        "name": "Toulouse",
+        "lat": 43.6044622,
+        "lng": 1.4442469,
+        "url": ""
+    },
+    {
+        "name": "Valence Romans Agglo",
+        "lat": 45.0144329,
+        "lng": 5.0772531,
+        "url": ""
+    },
+    {
+        "name": "Veber\u00f6d",
+        "lat": 55.6334996,
+        "lng": 13.4925649,
+        "url": ""
+    },
+    {
+        "name": "Velsen",
+        "lat": 52.4519103,
+        "lng": 4.6038911,
+        "url": ""
+    },
+    {
+        "name": "Yucat\u00e1n",
+        "lat": 20.6845957,
+        "lng": -88.8755669,
+        "url": ""
+    },
+    {
+        "name": "Zadar",
+        "lat": 44.1168594,
+        "lng": 15.2353257,
+        "url": ""
+    },
+    {
+        "name": "Zagreb",
+        "lat": 45.8130967,
+        "lng": 15.9772795,
+        "url": ""
+    }
+];
+    </script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
