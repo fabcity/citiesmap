@@ -5,8 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    const fabCityIcon = L.icon({
+        iconUrl: 'https://fab.city/wp-content/uploads/2024/05/fab-city-logo-website-ultra-reduced.png',
+        iconSize: [40, 40],
+        className: 'fab-city-icon'
+    });
+
+    const fabCityIconInactive = L.icon({
+        iconUrl: 'https://fab.city/wp-content/uploads/2024/05/fab-city-logo-website-ultra-reduced.png',
+        iconSize: [40, 40],
+        className: 'fab-city-icon-inactive'
+    });
+
     CITIES_DATA.forEach(city => {
-        const marker = L.marker([city.lat, city.lng]).addTo(map);
+        const icon = city.status === 'Active' ? fabCityIcon : fabCityIconInactive;
+        const marker = L.marker([city.lat, city.lng], { icon: icon }).addTo(map);
 
         let popupContent = `<h3>${city.name}</h3>`;
         popupContent += `<p><b>Status:</b> ${city.status}</p>`;
