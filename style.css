@@ -23,3 +23,11 @@ body, html {
 .leaflet-popup-content p {
     margin: 5px 0;
 }
+
+.fab-city-icon {
+    filter: invert(100%);
+}
+
+.fab-city-icon-inactive {
+    filter: grayscale(100%);
+}
