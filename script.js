@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }).addTo(map);
 
     const fabCityIcon = L.icon({
-        iconUrl: 'https://fab.city/wp-content/uploads/2024/05/fab-city-logo-website-ultra-reduced.png',
+        iconUrl: 'https://raw.githubusercontent.com/fabcity/citiesmap/main/citiesdata/fabcitypin.png',
         iconSize: [40, 40],
         className: 'fab-city-icon'
     });
 
     const fabCityIconInactive = L.icon({
-        iconUrl: 'https://fab.city/wp-content/uploads/2024/05/fab-city-logo-website-ultra-reduced.png',
+        iconUrl: 'https://raw.githubusercontent.com/fabcity/citiesmap/main/citiesdata/fabcitypin.png',
         iconSize: [40, 40],
         className: 'fab-city-icon-inactive'
     });
