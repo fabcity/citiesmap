@@ -9,23 +9,30 @@ body, html {
 }
 
 .leaflet-popup-content-wrapper {
-    width: 300px;
     border-radius: 5px;
     padding: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
 }
 
 .leaflet-popup-content h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    color: #333;
 }
 
 .leaflet-popup-content p {
     margin: 5px 0;
+    color: #555;
+}
+
+.leaflet-popup-content b {
+    color: #000;
 }
 
 .fab-city-icon {
-    filter: invert(100%);
+    /* The new pin is already inverted, so no filter needed */
 }
 
 .fab-city-icon-inactive {
