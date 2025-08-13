@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const map = L.map('map').setView([45, 0], 2); // Centered to see Europe and US
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer('https://api.maptiler.com/maps/dataviz/{z}/{x}/{y}.png?key=oZ81FlDBLyb29JHKw9Ia', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
     }).addTo(map);
 
     const fabCityIcon = L.icon({
