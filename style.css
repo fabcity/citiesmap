@@ -2,6 +2,7 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 #map {
@@ -11,7 +12,7 @@ body, html {
 .leaflet-popup-content-wrapper {
     border-radius: 5px;
     padding: 10px;
-    background-color: #f8f8f8;
+    background-color: #f8f8f8; /* Light gray background */
     border: 1px solid #ddd;
 }
 
@@ -19,7 +20,7 @@ body, html {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.5em;
-    color: #333;
+    color: #1a1a1a; /* Dark color from brand palette */
 }
 
 .leaflet-popup-content p {
@@ -28,7 +29,7 @@ body, html {
 }
 
 .leaflet-popup-content b {
-    color: #000;
+    color: #0d7f78; /* Green from brand palette */
 }
 
 .fab-city-icon {
@@ -37,4 +38,21 @@ body, html {
 
 .fab-city-icon-inactive {
     filter: grayscale(100%);
+}
+
+.info-box {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+}
+
+.info-box h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.info-box p {
+    margin: 0;
+    color: #555;
 }

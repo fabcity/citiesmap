@@ -17,9 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         className: 'fab-city-icon-inactive'
     });
 
+    const markers = L.markerClusterGroup();
+
     CITIES_DATA.forEach(city => {
         const icon = city.status === 'Active' ? fabCityIcon : fabCityIconInactive;
-        const marker = L.marker([city.lat, city.lng], { icon: icon }).addTo(map);
+        const marker = L.marker([city.lat, city.lng], { icon: icon });
 
         let popupContent = `<h3>${city.name}</h3>`;
         popupContent += `<p><b>Status:</b> ${city.status}</p>`;
@@ -36,5 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         marker.bindPopup(popupContent);
+        markers.addLayer(marker);
     });
+
+    map.addLayer(markers);
+
+    const info = L.control();
+
+    info.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info-box');
+        this.update();
+        return this._div;
+    };
+
+    info.update = function () {
+        this._div.innerHTML = '<h4>Fab City Network</h4><p>As per August 2026. This map features the network members of the Fab City Global Initiative. Learn more at: <a href="http://www.fab.city" target="_blank">www.fab.city</a></p>';
+    };
+
+    info.addTo(map);
 });
