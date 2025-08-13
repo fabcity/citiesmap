@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     map.addLayer(markers);
 
-    const info = L.control();
+    const info = L.control({position: 'bottomright'});
 
     info.onAdd = function (map) {
         this._div = L.DomUtil.create('div', 'info-box');

@@ -30,6 +30,7 @@ body, html {
 
 .leaflet-popup-content b {
     color: #0d7f78; /* Green from brand palette */
+    font-weight: 700;
 }
 
 .fab-city-icon {
@@ -50,6 +51,7 @@ body, html {
 .info-box h4 {
     margin: 0 0 5px 0;
     color: #333;
+    font-size: 2em;
 }
 
 .info-box p {
